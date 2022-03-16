@@ -20,7 +20,7 @@ class ImagesService: ServiceProtocol {
         let parameters: Parameters = [
             "client_id": accessKey,
             "page": "\(page)",
-            "per_page": "\(10)"]
+            "per_page": "\(15)"]
         
         AF.request(baseURL + path, method: .get, parameters: parameters).responseData { (response) in
             switch response.result {

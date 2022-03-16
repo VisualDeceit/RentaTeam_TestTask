@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .vertical
-        self.window?.rootViewController = GalleryCollectionViewController(collectionViewLayout: flowLayout)
+        self.window?.rootViewController = GalleryViewController(collectionViewLayout: flowLayout)
         
         self.window?.makeKeyAndVisible()
         return true

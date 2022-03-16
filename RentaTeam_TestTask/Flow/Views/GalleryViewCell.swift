@@ -103,5 +103,8 @@ class GalleryViewCell: UICollectionViewCell {
     
         imageView.kf.cancelDownloadTask()
         imageView.image = nil
+        userLabel.text = nil
+        dateLabel.text = nil
+        likesLabel.text = nil
     }
 }

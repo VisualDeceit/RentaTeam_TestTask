@@ -15,6 +15,7 @@ struct ImageData: Decodable {
     let height: Int
     let description: String?
     let likes: Int
+    let user: User
     let urls: URLs
     
     enum CodingKeys: String, CodingKey {
@@ -25,6 +26,7 @@ struct ImageData: Decodable {
              height,
              description,
              likes,
+             user,
              urls
     }
 }
@@ -32,4 +34,8 @@ struct ImageData: Decodable {
 struct URLs: Decodable {
     let thumb: String
     let regular: String
+}
+
+struct User: Decodable {
+    let name: String
 }

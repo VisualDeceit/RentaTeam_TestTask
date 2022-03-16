@@ -7,5 +7,5 @@ target 'RentaTeam_TestTask' do
 
   # Pods for RentaTeam_TestTask
   pod 'Alamofire', '~> 5.5'
-
+  pod 'Kingfisher', :git => 'https://github.com/onevcat/Kingfisher.git', :branch => 'version6-xcode13'
 end

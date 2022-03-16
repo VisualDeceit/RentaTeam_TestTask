@@ -1,5 +1,5 @@
 //
-//  GalleryCollectionViewController.swift
+//  GalleryViewController.swift
 //  RentaTeam_TestTask
 //
 //  Created by Александр Фомин on 16.03.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GalleryCollectionViewController: UICollectionViewController {
+class GalleryViewController: UICollectionViewController {
     
     private enum Constants {
         static let cellSpacing: CGFloat = 10
@@ -21,10 +21,11 @@ class GalleryCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.collectionView.register(GalleryCollectionViewCell.self,
-                                     forCellWithReuseIdentifier: GalleryCollectionViewCell.reuseIdentifier)
+        self.collectionView.register(GalleryViewCell.self,
+                                     forCellWithReuseIdentifier: GalleryViewCell.reuseIdentifier)
         collectionView.prefetchDataSource = self
-        collectionView.backgroundColor = .yellow
+        collectionView.backgroundColor = .white
+        collectionView.showsVerticalScrollIndicator = false
 
         imagesService.requestData(page: nextPage) { [weak self] result in
             switch result {
@@ -38,27 +39,43 @@ class GalleryCollectionViewController: UICollectionViewController {
         }
     }
     
-    // MARK: - UICollectionViewDataSource
+// MARK: - UICollectionViewDataSource
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         imagesData.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GalleryCollectionViewCell.reuseIdentifier,
-                                                            for: indexPath) as? GalleryCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GalleryViewCell.reuseIdentifier,
+                                                            for: indexPath) as? GalleryViewCell else {
             return UICollectionViewCell()
         }
+        let dateFormatter = ISO8601DateFormatter()
+        let date = dateFormatter.date(from:imagesData[indexPath.row].created)!
         
-        cell.configure()
+        let df = DateFormatter.shortLocalStyle
+        
+        
+        cell.configure(url: imagesData[indexPath.row].urls.thumb,
+                       user: imagesData[indexPath.row].user.name,
+                       date: df.string(from: date),
+                       likes: imagesData[indexPath.row].likes)
         
         return cell
+    }
+    
+// MARK: - UICollectionViewDelegate
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let imageDetailViewController = ImageDetailViewController()
+        imageDetailViewController.url = imagesData[indexPath.row].urls.regular
+        present(imageDetailViewController, animated: true)
     }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
 
-extension GalleryCollectionViewController: UICollectionViewDelegateFlowLayout {
+extension GalleryViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -92,7 +109,7 @@ extension GalleryCollectionViewController: UICollectionViewDelegateFlowLayout {
 
 // MARK: - UICollectionViewDataSourcePrefetching
 
-extension GalleryCollectionViewController: UICollectionViewDataSourcePrefetching {
+extension GalleryViewController: UICollectionViewDataSourcePrefetching {
     
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
         guard let maxItem = indexPaths.max()?.item else { return }

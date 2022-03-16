@@ -11,10 +11,13 @@
 		1B541B0027E234C400DC7D12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B541AFF27E234C400DC7D12 /* SceneDelegate.swift */; };
 		1B541B0727E234C900DC7D12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B541B0627E234C900DC7D12 /* Assets.xcassets */; };
 		1B541B0A27E234C900DC7D12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B541B0827E234C900DC7D12 /* LaunchScreen.storyboard */; };
-		1B541B2127E23C1000DC7D12 /* GalleryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B541B2027E23C1000DC7D12 /* GalleryCollectionViewController.swift */; };
-		1B541B2627E23E3900DC7D12 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B541B2527E23E3900DC7D12 /* GalleryCollectionViewCell.swift */; };
+		1B541B2127E23C1000DC7D12 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B541B2027E23C1000DC7D12 /* GalleryViewController.swift */; };
+		1B541B2627E23E3900DC7D12 /* GalleryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B541B2527E23E3900DC7D12 /* GalleryViewCell.swift */; };
 		1B541B2E27E24BFC00DC7D12 /* ImagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B541B2D27E24BFC00DC7D12 /* ImagesService.swift */; };
 		1B541B3127E253DA00DC7D12 /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B541B3027E253DA00DC7D12 /* ImageData.swift */; };
+		1B541B3C27E279C600DC7D12 /* ImageViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B541B3B27E279C600DC7D12 /* ImageViewData.swift */; };
+		1B541B4027E27A5C00DC7D12 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B541B3F27E27A5C00DC7D12 /* DateFormatter+Extension.swift */; };
+		1B541B4C27E28F8800DC7D12 /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B541B4B27E28F8800DC7D12 /* ImageDetailViewController.swift */; };
 		6CFDA34380A2FF49782C9ABB /* Pods_RentaTeam_TestTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372A2D386998F8C615D29B4F /* Pods_RentaTeam_TestTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,10 +29,13 @@
 		1B541B0627E234C900DC7D12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B541B0927E234C900DC7D12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B541B0B27E234C900DC7D12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1B541B2027E23C1000DC7D12 /* GalleryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewController.swift; sourceTree = "<group>"; };
-		1B541B2527E23E3900DC7D12 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
+		1B541B2027E23C1000DC7D12 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		1B541B2527E23E3900DC7D12 /* GalleryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewCell.swift; sourceTree = "<group>"; };
 		1B541B2D27E24BFC00DC7D12 /* ImagesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesService.swift; sourceTree = "<group>"; };
 		1B541B3027E253DA00DC7D12 /* ImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageData.swift; sourceTree = "<group>"; };
+		1B541B3B27E279C600DC7D12 /* ImageViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewData.swift; sourceTree = "<group>"; };
+		1B541B3F27E27A5C00DC7D12 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
+		1B541B4B27E28F8800DC7D12 /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
 		372A2D386998F8C615D29B4F /* Pods_RentaTeam_TestTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RentaTeam_TestTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB49B21A3C6BCF7C385AE90 /* Pods-RentaTeam_TestTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RentaTeam_TestTask.release.xcconfig"; path = "Target Support Files/Pods-RentaTeam_TestTask/Pods-RentaTeam_TestTask.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +73,7 @@
 		1B541AFC27E234C400DC7D12 /* RentaTeam_TestTask */ = {
 			isa = PBXGroup;
 			children = (
+				1B541B3E27E27A3300DC7D12 /* Extensions */,
 				1B541B1527E2368100DC7D12 /* App */,
 				1B541B1427E2366F00DC7D12 /* Models */,
 				1B541B1327E2365E00DC7D12 /* Services */,
@@ -80,7 +87,8 @@
 			isa = PBXGroup;
 			children = (
 				1B541B2327E23E0C00DC7D12 /* Views */,
-				1B541B2027E23C1000DC7D12 /* GalleryCollectionViewController.swift */,
+				1B541B2027E23C1000DC7D12 /* GalleryViewController.swift */,
+				1B541B4B27E28F8800DC7D12 /* ImageDetailViewController.swift */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
@@ -97,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				1B541B3027E253DA00DC7D12 /* ImageData.swift */,
+				1B541B3B27E279C600DC7D12 /* ImageViewData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -123,9 +132,17 @@
 		1B541B2327E23E0C00DC7D12 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1B541B2527E23E3900DC7D12 /* GalleryCollectionViewCell.swift */,
+				1B541B2527E23E3900DC7D12 /* GalleryViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		1B541B3E27E27A3300DC7D12 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1B541B3F27E27A5C00DC7D12 /* DateFormatter+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		7ACBA8AD15E80EB83B22390B /* Frameworks */ = {
@@ -260,9 +277,12 @@
 			files = (
 				1B541AFE27E234C400DC7D12 /* AppDelegate.swift in Sources */,
 				1B541B2E27E24BFC00DC7D12 /* ImagesService.swift in Sources */,
-				1B541B2627E23E3900DC7D12 /* GalleryCollectionViewCell.swift in Sources */,
-				1B541B2127E23C1000DC7D12 /* GalleryCollectionViewController.swift in Sources */,
+				1B541B2627E23E3900DC7D12 /* GalleryViewCell.swift in Sources */,
+				1B541B2127E23C1000DC7D12 /* GalleryViewController.swift in Sources */,
+				1B541B4027E27A5C00DC7D12 /* DateFormatter+Extension.swift in Sources */,
 				1B541B3127E253DA00DC7D12 /* ImageData.swift in Sources */,
+				1B541B3C27E279C600DC7D12 /* ImageViewData.swift in Sources */,
+				1B541B4C27E28F8800DC7D12 /* ImageDetailViewController.swift in Sources */,
 				1B541B0027E234C400DC7D12 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
