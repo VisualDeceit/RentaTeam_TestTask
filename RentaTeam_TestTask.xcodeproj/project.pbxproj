@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		1B541AFE27E234C400DC7D12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B541AFD27E234C400DC7D12 /* AppDelegate.swift */; };
 		1B541B0027E234C400DC7D12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B541AFF27E234C400DC7D12 /* SceneDelegate.swift */; };
-		1B541B0227E234C400DC7D12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B541B0127E234C400DC7D12 /* ViewController.swift */; };
-		1B541B0527E234C400DC7D12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B541B0327E234C400DC7D12 /* Main.storyboard */; };
 		1B541B0727E234C900DC7D12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B541B0627E234C900DC7D12 /* Assets.xcassets */; };
 		1B541B0A27E234C900DC7D12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B541B0827E234C900DC7D12 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -19,8 +17,6 @@
 		1B541AFA27E234C400DC7D12 /* RentaTeam_TestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RentaTeam_TestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B541AFD27E234C400DC7D12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B541AFF27E234C400DC7D12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1B541B0127E234C400DC7D12 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1B541B0427E234C400DC7D12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1B541B0627E234C900DC7D12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B541B0927E234C900DC7D12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B541B0B27E234C900DC7D12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,15 +52,53 @@
 		1B541AFC27E234C400DC7D12 /* RentaTeam_TestTask */ = {
 			isa = PBXGroup;
 			children = (
+				1B541B1527E2368100DC7D12 /* App */,
+				1B541B1627E2369700DC7D12 /* Resources */,
+				1B541B1427E2366F00DC7D12 /* Models */,
+				1B541B1327E2365E00DC7D12 /* Services */,
+				1B541B1227E2363B00DC7D12 /* Flow */,
+			);
+			path = RentaTeam_TestTask;
+			sourceTree = "<group>";
+		};
+		1B541B1227E2363B00DC7D12 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		1B541B1327E2365E00DC7D12 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		1B541B1427E2366F00DC7D12 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1B541B1527E2368100DC7D12 /* App */ = {
+			isa = PBXGroup;
+			children = (
 				1B541AFD27E234C400DC7D12 /* AppDelegate.swift */,
 				1B541AFF27E234C400DC7D12 /* SceneDelegate.swift */,
-				1B541B0127E234C400DC7D12 /* ViewController.swift */,
-				1B541B0327E234C400DC7D12 /* Main.storyboard */,
-				1B541B0627E234C900DC7D12 /* Assets.xcassets */,
 				1B541B0827E234C900DC7D12 /* LaunchScreen.storyboard */,
 				1B541B0B27E234C900DC7D12 /* Info.plist */,
 			);
-			path = RentaTeam_TestTask;
+			path = App;
+			sourceTree = "<group>";
+		};
+		1B541B1627E2369700DC7D12 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1B541B0627E234C900DC7D12 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +160,6 @@
 			files = (
 				1B541B0A27E234C900DC7D12 /* LaunchScreen.storyboard in Resources */,
 				1B541B0727E234C900DC7D12 /* Assets.xcassets in Resources */,
-				1B541B0527E234C400DC7D12 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +170,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B541B0227E234C400DC7D12 /* ViewController.swift in Sources */,
 				1B541AFE27E234C400DC7D12 /* AppDelegate.swift in Sources */,
 				1B541B0027E234C400DC7D12 /* SceneDelegate.swift in Sources */,
 			);
@@ -146,14 +178,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1B541B0327E234C400DC7D12 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1B541B0427E234C400DC7D12 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1B541B0827E234C900DC7D12 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -216,7 +240,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -271,7 +295,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -288,7 +312,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DQ48S8SUS4;
-				INFOPLIST_FILE = RentaTeam_TestTask/Info.plist;
+				INFOPLIST_FILE = RentaTeam_TestTask/App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,7 +321,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.50.FominAlexander.RentaTeam-TestTask";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -307,7 +332,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DQ48S8SUS4;
-				INFOPLIST_FILE = RentaTeam_TestTask/Info.plist;
+				INFOPLIST_FILE = RentaTeam_TestTask/App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +341,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "ru.50.FominAlexander.RentaTeam-TestTask";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
