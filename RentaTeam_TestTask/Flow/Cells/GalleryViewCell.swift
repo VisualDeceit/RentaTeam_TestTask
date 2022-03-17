@@ -44,24 +44,26 @@ class GalleryViewCell: UICollectionViewCell {
         return label
     }()
     
-    func configure(url: String, user: String, date: String, likes: Int) {
-        self.backgroundColor = .white
+    func configure(with imageViewData: ImageViewData) {
         setupViews()
-        imageView.kf.setImage(with: URL(string: url))
-        userLabel.text = user
-        dateLabel.text = date
-        likesLabel.text = "♥ \(likes)"
+        guard let url = URL(string: imageViewData.stringUrl) else { return }
+        imageView.kf.setImage(with: url)
+        userLabel.text = imageViewData.userName
+        dateLabel.text = imageViewData.date
+        likesLabel.text = "♥ \(imageViewData.likes)"
     }
     
     private func setupViews() {
+        self.backgroundColor = .white
+        
         self.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: self.topAnchor),
-              imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-              imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-              imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
         
         self.addSubview(blackoutView)
@@ -88,19 +90,18 @@ class GalleryViewCell: UICollectionViewCell {
             userLabel.trailingAnchor.constraint(equalTo: blackoutView.trailingAnchor, constant: -4),
             userLabel.bottomAnchor.constraint(equalTo: dateLabel.topAnchor, constant: -4),
         ])
-
+        
         blackoutView.addSubview(likesLabel)
         NSLayoutConstraint.activate([
             likesLabel.bottomAnchor.constraint(equalTo: blackoutView.bottomAnchor, constant: -4),
             likesLabel.leadingAnchor.constraint(equalTo: dateLabel.trailingAnchor),
             likesLabel.trailingAnchor.constraint(equalTo: blackoutView.trailingAnchor, constant: -4),
         ])
-        
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-    
+        
         imageView.kf.cancelDownloadTask()
         imageView.image = nil
         userLabel.text = nil

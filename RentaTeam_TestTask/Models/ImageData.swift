@@ -30,12 +30,3 @@ struct ImageData: Decodable {
              urls
     }
 }
-
-struct URLs: Decodable {
-    let thumb: String
-    let regular: String
-}
-
-struct User: Decodable {
-    let name: String
-}

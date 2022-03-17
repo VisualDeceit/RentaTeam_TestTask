@@ -18,6 +18,8 @@
 		1B541B3C27E279C600DC7D12 /* ImageViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B541B3B27E279C600DC7D12 /* ImageViewData.swift */; };
 		1B541B4027E27A5C00DC7D12 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B541B3F27E27A5C00DC7D12 /* DateFormatter+Extension.swift */; };
 		1B541B4C27E28F8800DC7D12 /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B541B4B27E28F8800DC7D12 /* ImageDetailViewController.swift */; };
+		1B541B5227E370C400DC7D12 /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B541B5127E370C300DC7D12 /* URLs.swift */; };
+		1B541B5527E370E100DC7D12 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B541B5427E370E100DC7D12 /* User.swift */; };
 		6CFDA34380A2FF49782C9ABB /* Pods_RentaTeam_TestTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372A2D386998F8C615D29B4F /* Pods_RentaTeam_TestTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +38,8 @@
 		1B541B3B27E279C600DC7D12 /* ImageViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewData.swift; sourceTree = "<group>"; };
 		1B541B3F27E27A5C00DC7D12 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
 		1B541B4B27E28F8800DC7D12 /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
+		1B541B5127E370C300DC7D12 /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
+		1B541B5427E370E100DC7D12 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		372A2D386998F8C615D29B4F /* Pods_RentaTeam_TestTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RentaTeam_TestTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFB49B21A3C6BCF7C385AE90 /* Pods-RentaTeam_TestTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RentaTeam_TestTask.release.xcconfig"; path = "Target Support Files/Pods-RentaTeam_TestTask/Pods-RentaTeam_TestTask.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,7 +90,7 @@
 		1B541B1227E2363B00DC7D12 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
-				1B541B2327E23E0C00DC7D12 /* Views */,
+				1B541B2327E23E0C00DC7D12 /* Cells */,
 				1B541B2027E23C1000DC7D12 /* GalleryViewController.swift */,
 				1B541B4B27E28F8800DC7D12 /* ImageDetailViewController.swift */,
 			);
@@ -106,6 +110,8 @@
 			children = (
 				1B541B3027E253DA00DC7D12 /* ImageData.swift */,
 				1B541B3B27E279C600DC7D12 /* ImageViewData.swift */,
+				1B541B5127E370C300DC7D12 /* URLs.swift */,
+				1B541B5427E370E100DC7D12 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -129,12 +135,12 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		1B541B2327E23E0C00DC7D12 /* Views */ = {
+		1B541B2327E23E0C00DC7D12 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				1B541B2527E23E3900DC7D12 /* GalleryViewCell.swift */,
 			);
-			path = Views;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		1B541B3E27E27A3300DC7D12 /* Extensions */ = {
@@ -280,10 +286,12 @@
 				1B541B2627E23E3900DC7D12 /* GalleryViewCell.swift in Sources */,
 				1B541B2127E23C1000DC7D12 /* GalleryViewController.swift in Sources */,
 				1B541B4027E27A5C00DC7D12 /* DateFormatter+Extension.swift in Sources */,
+				1B541B5227E370C400DC7D12 /* URLs.swift in Sources */,
 				1B541B3127E253DA00DC7D12 /* ImageData.swift in Sources */,
 				1B541B3C27E279C600DC7D12 /* ImageViewData.swift in Sources */,
 				1B541B4C27E28F8800DC7D12 /* ImageDetailViewController.swift in Sources */,
 				1B541B0027E234C400DC7D12 /* SceneDelegate.swift in Sources */,
+				1B541B5527E370E100DC7D12 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

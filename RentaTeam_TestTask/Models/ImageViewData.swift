@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct ImageViewData {
+    let stringUrl: String
+    let userName: String
+    let date: String
+    let likes: String
+}

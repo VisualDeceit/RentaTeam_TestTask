@@ -25,7 +25,6 @@ class GalleryViewController: UICollectionViewController {
                                      forCellWithReuseIdentifier: GalleryViewCell.reuseIdentifier)
         collectionView.prefetchDataSource = self
         collectionView.backgroundColor = .white
-        collectionView.showsVerticalScrollIndicator = false
 
         imagesService.requestData(page: nextPage) { [weak self] result in
             switch result {
@@ -50,25 +49,28 @@ class GalleryViewController: UICollectionViewController {
                                                             for: indexPath) as? GalleryViewCell else {
             return UICollectionViewCell()
         }
-        let dateFormatter = ISO8601DateFormatter()
-        let date = dateFormatter.date(from:imagesData[indexPath.row].created)!
         
-        let df = DateFormatter.shortLocalStyle
-        
-        
-        cell.configure(url: imagesData[indexPath.row].urls.thumb,
-                       user: imagesData[indexPath.row].user.name,
-                       date: df.string(from: date),
-                       likes: imagesData[indexPath.row].likes)
-        
+        let imageViewData = convertDateToViewModel(data: imagesData[indexPath.row])
+        cell.configure(with: imageViewData)
         return cell
+    }
+    
+    private func convertDateToViewModel(data: ImageData) -> ImageViewData {
+        let isoDateFormatter = ISO8601DateFormatter()
+        let date = isoDateFormatter.date(from: data.created) ?? Date()
+        let localDateFormatter = DateFormatter.shortLocalStyle
+        
+        return .init(stringUrl: data.urls.thumb,
+                     userName: data.user.name,
+                     date: localDateFormatter.string(from: date),
+                     likes: "\(data.likes)")
     }
     
 // MARK: - UICollectionViewDelegate
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let imageDetailViewController = ImageDetailViewController()
-        imageDetailViewController.url = imagesData[indexPath.row].urls.regular
+        imageDetailViewController.stringURL = imagesData[indexPath.row].urls.regular
         present(imageDetailViewController, animated: true)
     }
 }
@@ -122,8 +124,7 @@ extension GalleryViewController: UICollectionViewDataSourcePrefetching {
                 case .success(let data):
                     guard let self = self else { return }
                     self.nextPage += 1
-                    let indexPath = (self.imagesData.count..<self.imagesData.count + data.count)
-                        .map { IndexPath(row: $0, section: 0) }
+                    let indexPath = (self.imagesData.count..<self.imagesData.count + data.count).map { IndexPath(row: $0, section: 0) }
                     self.imagesData.append(contentsOf: data)
                     self.collectionView.insertItems(at: indexPath)
                     self.isLoading = false
