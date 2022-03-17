@@ -51,9 +51,9 @@ class ImageDetailViewController: UIViewController {
         self.imageView.addSubview(cachedDateLabel)
         
         NSLayoutConstraint.activate([
-            cachedDateLabel.bottomAnchor.constraint(equalTo: self.imageView.bottomAnchor, constant: -4),
-            cachedDateLabel.leadingAnchor.constraint(equalTo: self.imageView.leadingAnchor, constant: 4),
-            cachedDateLabel.trailingAnchor.constraint(equalTo: self.imageView.trailingAnchor)
+            cachedDateLabel.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -4),
+            cachedDateLabel.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 4),
+            cachedDateLabel.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -4)
         ])
     }
     
