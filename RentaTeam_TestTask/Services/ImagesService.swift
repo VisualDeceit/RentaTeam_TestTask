@@ -9,6 +9,7 @@ import Foundation
 import Alamofire
 
 protocol ServiceProtocol {
+    func requestData(page: Int, completion: @escaping (Result<[ImageData], Error>) -> ())
 }
 
 class ImagesService: ServiceProtocol {

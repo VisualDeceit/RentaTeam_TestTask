@@ -14,16 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        ImageCache.default.memoryStorage.config.totalCostLimit = 1
-        ImageCache.default.diskStorage.config.sizeLimit = 1024 * 1024 * 1024
-        
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = .vertical
-        self.window?.rootViewController = GalleryViewController(collectionViewLayout: flowLayout)
-        
+        self.window = Builder.makeWindow()
         self.window?.makeKeyAndVisible()
         return true
     }

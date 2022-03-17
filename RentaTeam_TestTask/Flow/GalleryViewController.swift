@@ -9,6 +9,8 @@ import UIKit
 
 class GalleryViewController: UICollectionViewController {
     
+    var imagesService: ServiceProtocol?
+    
     private enum Constants {
         static let cellSpacing: CGFloat = 10
     }
@@ -16,7 +18,7 @@ class GalleryViewController: UICollectionViewController {
     private var nextPage = 1
     private var isLoading = false
     private var imagesData = [ImageData]()
-    private let imagesService = ImagesService()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +28,7 @@ class GalleryViewController: UICollectionViewController {
         collectionView.prefetchDataSource = self
         collectionView.backgroundColor = .white
 
-        imagesService.requestData(page: nextPage) { [weak self] result in
+        imagesService?.requestData(page: nextPage) { [weak self] result in
             switch result {
             case .success(let data):
                 self?.nextPage += 1
@@ -119,7 +121,7 @@ extension GalleryViewController: UICollectionViewDataSourcePrefetching {
         if maxItem > imagesData.count - 4, !isLoading {
             isLoading = true
             
-            imagesService.requestData(page: nextPage) { [weak self] result in
+            imagesService?.requestData(page: nextPage) { [weak self] result in
                 switch result {
                 case .success(let data):
                     guard let self = self else { return }
